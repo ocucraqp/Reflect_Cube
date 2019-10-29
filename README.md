@@ -23,6 +23,6 @@ execute exe file.
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
 ## Author
-- kbys
+- kbys (https://github.com/rideonkb)
 - lanqiu (https://github.com/lanqiugit)
 - masapyon (https://github.com/ocucraqp)
