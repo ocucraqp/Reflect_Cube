@@ -3,20 +3,30 @@
 
 ## Description
 フィールド
-- とりあえず立方体で
-- 余裕があれば別の形も
+- 立方体
 
-ボールの形
+ボール
 - 上から1,3,6,10の4層のピラミッド型で合計20個プラス白玉
 
+ルール
+- ボールの数字がボールのHPになっている．
+- 壁に当てるとボールのHPが１ずつ減る．
+- ボールのHPを0にするとボールが消える．
+- ボールを消した人がボールの最大HP分を得点として獲得する．
+- ボールを打つのは一回づつで交代
+
+人数
+- 2~4人
+- 得点が高い人が勝ち
+
 ## Demo
-noti noti tuika.
+
 
 ## Requirement
-VR headset.
+- Oculus Rift S
 
 ## Usage
-execute exe file.
+1. execute exe file.
 
 ## Licence
 
