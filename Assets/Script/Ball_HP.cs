@@ -12,6 +12,13 @@ public class Ball_HP : MonoBehaviour
     [SerializeField]
     private int ball_hp;
 
+    private GameObject refObj;
+
+    void Start()
+    {
+        refObj = GameObject.Find("GameManager");
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Wall1" || collision.gameObject.name == "Wall2"
@@ -21,6 +28,8 @@ public class Ball_HP : MonoBehaviour
             ball_hp--;
             if (ball_hp <= 0)
             {
+                GameManager gm = refObj.GetComponent<GameManager>();
+                gm.point_count();
                 Destroy(this.gameObject);
             }
         }
