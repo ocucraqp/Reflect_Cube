@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 439754568}
   - component: {fileID: 439754567}
   m_Layer: 0
-  m_Name: Cue
+  m_Name: Que
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,7 +819,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fa3b98c7f5bb46059b6d5ba55a53a6d, type: 2}
+  - {fileID: 2100000, guid: de9397b2204f047bfa07b7e38b0dbde9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1468,12 +1468,12 @@ PrefabInstance:
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 337.6
+      value: 337.3
       objectReference: {fileID: 0}
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -917.2
+      value: -919.5
       objectReference: {fileID: 0}
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
@@ -1782,12 +1782,12 @@ PrefabInstance:
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 629.3
+      value: 628.3
       objectReference: {fileID: 0}
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 346.4
+      value: 344.4
       objectReference: {fileID: 0}
     - target: {fileID: 1971608861124201410, guid: cd0a31c4db719c04086e6ffc95a2ab8b,
         type: 3}
