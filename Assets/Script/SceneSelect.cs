@@ -8,6 +8,6 @@ public class SceneSelect : MonoBehaviour
     // Update is called once per frame
     public void OnClick()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 }
