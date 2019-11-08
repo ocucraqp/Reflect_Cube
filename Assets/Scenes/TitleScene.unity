@@ -2406,6 +2406,7 @@ GameObject:
   - component: {fileID: 1988360768}
   - component: {fileID: 1988360767}
   - component: {fileID: 1988360766}
+  - component: {fileID: 1988360769}
   m_Layer: 5
   m_Name: Button_Exit
   m_TagString: Untagged
@@ -2472,7 +2473,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1988360767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1988360769}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1988360767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,6 +2520,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988360764}
   m_CullTransparentMesh: 0
+--- !u!114 &1988360769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988360764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc43993dda15714da5f6abe7f448f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998170458
 GameObject:
   m_ObjectHideFlags: 0
