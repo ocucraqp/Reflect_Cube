@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DisplayCorrectPoint : MonoBehaviour
 {
-    [SerializeField] public GameObject point_1P, point_2P;
+    [SerializeField] public GameObject point_1P, point_2P, winner;
 
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,13 @@ public class DisplayCorrectPoint : MonoBehaviour
         text1.text=GameManager.point[0].ToString();
         var text2=point_2P.GetComponent<Text>();
         text2.text=GameManager.point[1].ToString();
+        var text3=winner.GetComponent<Text>();
+        if(GameManager.point[0]>GameManager.point[1]){
+            text3.text="1P WIN";
+        }else if(GameManager.point[0]<GameManager.point[1]){
+            text3.text="2P WIN";
+        }else{
+            text3.text="DRAW";
+        }
     }
 }
