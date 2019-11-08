@@ -8,6 +8,8 @@ public class BallHP : MonoBehaviour
     private int ball_hp;
     private int ball_no;
     private GameObject refObj;
+    [SerializeField]
+    private ParticleSystem sparkParticle;
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class BallHP : MonoBehaviour
                 gm.FalseBall(ball_no);
                 gm.PointCount(ball_no);
                 //Destroy(this.gameObject);
+                Instantiate(sparkParticle, transform.position, transform.rotation);              
                 this.gameObject.SetActive(false);
             }
         }
