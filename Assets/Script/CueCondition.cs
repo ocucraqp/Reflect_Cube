@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class CueCondition : MonoBehaviour
 {
-    private GameObject refObj;
+    private GameObject refObj, handObj;
+    private Transform ht, ct;
 
     void Start()
     {
         refObj = GameObject.Find("GameManager");
+        handObj = GameObject.Find("CustomHandRight");
+        ht = handObj.GetComponent<Transform>();
+        ct = this.GetComponent<Transform>();
     }
+
+ //   private void Update()
+ //   {
+ //       ct.position = ht.position;
+ //       ct.rotation = ht.rotation;
+ //   }
 
     private void OnCollisionEnter(Collision collision)
     {
