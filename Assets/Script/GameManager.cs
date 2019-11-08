@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -88,6 +89,12 @@ public class GameManager : MonoBehaviour
     public void FalseBall(int ball_no)
     {
         remaining_ball[ball_no] = false;
+        for(int i=1;i<BALL_COUNT;i++){
+            if(remaining_ball[i]==true){
+                return;
+            }
+        }
+        SceneManager.LoadScene("ResultScene");
     }
 
     public void SetFlagToChangePlayer()
