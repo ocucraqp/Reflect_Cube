@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,14 +12,12 @@ public class GameManager : MonoBehaviour
     private int current_player = 0, flag_to_change_player = 0;
     [SerializeField] private GameObject BallParent;
     public GameObject[] Balls;
+    public GameObject[] point_fields=new GameObject[PLAYER_COUNT];
     private bool[] remaining_ball = new bool[21];
-
-    public float timeOut = 1000f;
-    private float timeElapsed;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {     
         for (int i = 0; i < PLAYER_COUNT; i++)
         {
             point[i] = 0;
@@ -91,6 +90,11 @@ public class GameManager : MonoBehaviour
 
     public void PointCount(int ball_no)
     {
+        Text target_text;
+
         point[current_player] += ball_no;
+        
+        target_text=point_fields[current_player].GetComponent<Text>();
+        target_text.text=point[current_player].ToString();
     }
 }
