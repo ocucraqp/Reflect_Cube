@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
 
     private int[] point = new int[PLAYER_COUNT];
     private int current_player = 0, flag_to_change_player = 0;
+    private bool[] remaining_ball = new bool[21];
     [SerializeField] private GameObject BallParent;
     public GameObject[] Balls;
     public GameObject[] point_fields=new GameObject[PLAYER_COUNT];
-    private bool[] remaining_ball = new bool[21];
+    public GameObject text_current_player;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,12 @@ public class GameManager : MonoBehaviour
                     current_player++;
                 }
                 Debug.Log("Player" + current_player.ToString());
+                var rectTransform=text_current_player.GetComponent<RectTransform>();
+                if(current_player==0){
+                    rectTransform.anchoredPosition3D=new Vector3(-680,310,0);
+                }else{
+                    rectTransform.anchoredPosition3D=new Vector3(300,310,0);
+                }
                 flag_to_change_player = 0;
             }
         }
