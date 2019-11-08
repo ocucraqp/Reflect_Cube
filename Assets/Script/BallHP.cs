@@ -13,7 +13,12 @@ public class BallHP : MonoBehaviour
 
     void Start()
     {
-        ball_no = ball_hp;
+        // if ball_no is 4 or 13, you must get minus point.
+        if(ball_hp == 4 || ball_hp == 13){
+            ball_no = -ball_hp;
+        }else{
+            ball_no = ball_hp;
+        }
         refObj = GameObject.Find("GameManager");
     }
 
