@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject BallParent;
     public GameObject[] Balls;
     public GameObject[] point_fields=new GameObject[PLAYER_COUNT];
-    public GameObject text_current_player;
+    public GameObject Text_1P;
+    public GameObject Text_2P;
+    public GameObject Text_1P_Point;
+    public GameObject Text_2P_Point;
 
     // Start is called before the first frame update
     void Start()
@@ -59,11 +62,23 @@ public class GameManager : MonoBehaviour
                     current_player++;
                 }
                 Debug.Log("Player" + current_player.ToString());
-                var rectTransform=text_current_player.GetComponent<RectTransform>();
-                if(current_player==0){
-                    rectTransform.anchoredPosition3D=new Vector3(-680,310,0);
+                Text text_p1 = Text_1P.GetComponent<Text>();
+                Text text_p2 = Text_2P.GetComponent<Text>();
+                Text text_p1_point = Text_1P_Point.GetComponent<Text>();
+                Text text_p2_point = Text_2P_Point.GetComponent<Text>();
+                Color color_p1 = new Color(0f / 255f, 191f / 255f, 255f / 255f);
+                Color color_p2 = new Color(255f / 255f, 32f / 255f, 54f / 255f);
+                Color color_gray = new Color(118f / 255f, 118f / 255f, 118f / 255f);
+                if (current_player==0){
+                    text_p1.color = color_p1;
+                    text_p1_point.color = color_p1;
+                    text_p2.color = color_gray;
+                    text_p2_point.color = color_gray;
                 }else{
-                    rectTransform.anchoredPosition3D=new Vector3(300,310,0);
+                    text_p1.color = color_gray;
+                    text_p1_point.color = color_gray;
+                    text_p2.color = color_p2;
+                    text_p2_point.color = color_p2;
                 }
                 flag_to_change_player = 0;
             }
