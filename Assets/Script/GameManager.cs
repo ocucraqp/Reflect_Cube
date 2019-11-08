@@ -1,24 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public const int PLAYER_COUNT = 2;
     public const int BALL_COUNT = 21;
 
-    private int[] point = new int[PLAYER_COUNT];
+    public static int[] point = new int[PLAYER_COUNT];
     private int current_player = 0, flag_to_change_player = 0;
+    private bool[] remaining_ball = new bool[21];
     [SerializeField] private GameObject BallParent;
     public GameObject[] Balls;
-    private bool[] remaining_ball = new bool[21];
-
-    public float timeOut = 1000f;
-    private float timeElapsed;
+    public GameObject[] point_fields=new GameObject[PLAYER_COUNT];
+    public GameObject text_current_player;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {     
         for (int i = 0; i < PLAYER_COUNT; i++)
         {
             point[i] = 0;
@@ -58,6 +59,12 @@ public class GameManager : MonoBehaviour
                     current_player++;
                 }
                 Debug.Log("Player" + current_player.ToString());
+                var rectTransform=text_current_player.GetComponent<RectTransform>();
+                if(current_player==0){
+                    rectTransform.anchoredPosition3D=new Vector3(-680,310,0);
+                }else{
+                    rectTransform.anchoredPosition3D=new Vector3(300,310,0);
+                }
                 flag_to_change_player = 0;
             }
         }
@@ -82,6 +89,12 @@ public class GameManager : MonoBehaviour
     public void FalseBall(int ball_no)
     {
         remaining_ball[ball_no] = false;
+        for(int i=1;i<BALL_COUNT;i++){
+            if(remaining_ball[i]==true){
+                return;
+            }
+        }
+        SceneManager.LoadScene("ResultScene");
     }
 
     public void SetFlagToChangePlayer()
@@ -91,6 +104,11 @@ public class GameManager : MonoBehaviour
 
     public void PointCount(int ball_no)
     {
+        Text target_text;
+
         point[current_player] += ball_no;
+        
+        target_text=point_fields[current_player].GetComponent<Text>();
+        target_text.text=point[current_player].ToString();
     }
 }
