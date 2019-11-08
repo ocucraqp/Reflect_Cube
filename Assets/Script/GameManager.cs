@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public const int PLAYER_COUNT = 2;
     public const int BALL_COUNT = 21;
 
-    private int[] point = new int[PLAYER_COUNT];
+    public static int[] point = new int[PLAYER_COUNT];
     private int current_player = 0, flag_to_change_player = 0;
     private bool[] remaining_ball = new bool[21];
     [SerializeField] private GameObject BallParent;
