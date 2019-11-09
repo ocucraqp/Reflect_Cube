@@ -14,11 +14,7 @@ public class BallHP : MonoBehaviour
     void Start()
     {
         // if ball_no is 4 or 13, you must get minus point.
-        if(ball_hp == 4 || ball_hp == 13){
-            ball_no = -ball_hp;
-        }else{
-            ball_no = ball_hp;
-        }
+        ball_no = ball_hp;
         refObj = GameObject.Find("GameManager");
     }
 
@@ -33,7 +29,14 @@ public class BallHP : MonoBehaviour
             {
                 GameManager gm = refObj.GetComponent<GameManager>();
                 gm.FalseBall(ball_no);
-                gm.PointCount(ball_no);
+                if (ball_no == 4 || ball_no == 13)
+                {
+                    gm.PointCount(-ball_no);
+                }
+                else
+                {
+                    gm.PointCount(ball_no);
+                }
                 //Destroy(this.gameObject);
                 Instantiate(sparkParticle, transform.position, transform.rotation);              
                 this.gameObject.SetActive(false);
