@@ -21,7 +21,12 @@ public class Bounce : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
-        this.rb.velocity = refrectVec;
+        if (collision.gameObject.name == "Wall1" || collision.gameObject.name == "Wall2"
+            || collision.gameObject.name == "Wall3" || collision.gameObject.name == "Wall4"
+            || collision.gameObject.name == "Wall5" || collision.gameObject.name == "Wall6")
+        {
+            Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
+            this.rb.velocity = refrectVec;
+        }
     }
 }
