@@ -18,7 +18,7 @@
 - 2人
 
 ## Demo
-
+![Demo](demo.png "Demo")
 
 ## Requirement
 - Oculus Rift S
